@@ -2,11 +2,11 @@
 using System.Windows.Forms;
 
 namespace TrabalhoFormaisParteUm {
-    interface AdicionarSimbolos {
+    class AdicionarSimbolos {
 
-
-        void adicionarTerminal(String simbolo);
-        void adicionarNaoTerminal(String simbolo);
+        //Tava testando umas coisas com herança e poliformisfo mas não deu muito certo
+        public virtual void adicionarTerminal(string simbolo) { }
+        public virtual void adicionarNaoTerminal(string simbolo) { }
 
 
 

@@ -33,14 +33,22 @@
             this.txtTerminal = new System.Windows.Forms.TextBox();
             this.btnAdicionarNT = new System.Windows.Forms.Button();
             this.btnAdicionarT = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelSimbolos = new System.Windows.Forms.Panel();
             this.btnCriarProducoes = new System.Windows.Forms.Button();
             this.btnSelecionarG = new System.Windows.Forms.Button();
             this.comboGerador = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.labelGramatica = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnAdicionarProducao = new System.Windows.Forms.Button();
+            this.panelProducoes = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtLadoEsquerdo = new System.Windows.Forms.TextBox();
+            this.txtLadoDireito = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelSimbolos.SuspendLayout();
+            this.panelProducoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // radioRegular
@@ -70,7 +78,7 @@
             // 
             this.panel1.Controls.Add(this.radioLivreDeContexto);
             this.panel1.Controls.Add(this.radioRegular);
-            this.panel1.Location = new System.Drawing.Point(12, 34);
+            this.panel1.Location = new System.Drawing.Point(131, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(161, 53);
             this.panel1.TabIndex = 3;
@@ -136,23 +144,23 @@
             this.btnAdicionarT.UseVisualStyleBackColor = true;
             this.btnAdicionarT.Click += new System.EventHandler(this.btnAdicionarT_Click);
             // 
-            // panel2
+            // panelSimbolos
             // 
-            this.panel2.Controls.Add(this.btnCriarProducoes);
-            this.panel2.Controls.Add(this.btnSelecionarG);
-            this.panel2.Controls.Add(this.comboGerador);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.btnAdicionarNT);
-            this.panel2.Controls.Add(this.btnAdicionarT);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.txtTerminal);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtNaoTerminal);
-            this.panel2.Location = new System.Drawing.Point(222, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 201);
-            this.panel2.TabIndex = 11;
+            this.panelSimbolos.Controls.Add(this.btnCriarProducoes);
+            this.panelSimbolos.Controls.Add(this.btnSelecionarG);
+            this.panelSimbolos.Controls.Add(this.comboGerador);
+            this.panelSimbolos.Controls.Add(this.label4);
+            this.panelSimbolos.Controls.Add(this.btnAdicionarNT);
+            this.panelSimbolos.Controls.Add(this.btnAdicionarT);
+            this.panelSimbolos.Controls.Add(this.label1);
+            this.panelSimbolos.Controls.Add(this.label2);
+            this.panelSimbolos.Controls.Add(this.txtTerminal);
+            this.panelSimbolos.Controls.Add(this.label3);
+            this.panelSimbolos.Controls.Add(this.txtNaoTerminal);
+            this.panelSimbolos.Location = new System.Drawing.Point(78, 92);
+            this.panelSimbolos.Name = "panelSimbolos";
+            this.panelSimbolos.Size = new System.Drawing.Size(274, 201);
+            this.panelSimbolos.TabIndex = 11;
             // 
             // btnCriarProducoes
             // 
@@ -162,6 +170,7 @@
             this.btnCriarProducoes.TabIndex = 14;
             this.btnCriarProducoes.Text = "Criar Produções";
             this.btnCriarProducoes.UseVisualStyleBackColor = true;
+            this.btnCriarProducoes.Click += new System.EventHandler(this.btnCriarProducoes_Click);
             // 
             // btnSelecionarG
             // 
@@ -195,26 +204,94 @@
             // labelGramatica
             // 
             this.labelGramatica.AutoSize = true;
-            this.labelGramatica.Location = new System.Drawing.Point(293, 239);
+            this.labelGramatica.Location = new System.Drawing.Point(162, 324);
             this.labelGramatica.Name = "labelGramatica";
             this.labelGramatica.Size = new System.Drawing.Size(105, 13);
             this.labelGramatica.TabIndex = 15;
             this.labelGramatica.Text = "G:({S,A,B},{0,1},P,S)";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Lado Esquerdo";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(109, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Lado Direito";
+            // 
+            // btnAdicionarProducao
+            // 
+            this.btnAdicionarProducao.Location = new System.Drawing.Point(38, 106);
+            this.btnAdicionarProducao.Name = "btnAdicionarProducao";
+            this.btnAdicionarProducao.Size = new System.Drawing.Size(95, 23);
+            this.btnAdicionarProducao.TabIndex = 15;
+            this.btnAdicionarProducao.Text = "Adicionar Produção";
+            this.btnAdicionarProducao.UseVisualStyleBackColor = true;
+            this.btnAdicionarProducao.Click += new System.EventHandler(this.btnAdicionarProducao_Click);
+            // 
+            // panelProducoes
+            // 
+            this.panelProducoes.Controls.Add(this.txtLadoDireito);
+            this.panelProducoes.Controls.Add(this.txtLadoEsquerdo);
+            this.panelProducoes.Controls.Add(this.label7);
+            this.panelProducoes.Controls.Add(this.label6);
+            this.panelProducoes.Controls.Add(this.btnAdicionarProducao);
+            this.panelProducoes.Controls.Add(this.label5);
+            this.panelProducoes.Enabled = false;
+            this.panelProducoes.Location = new System.Drawing.Point(119, 364);
+            this.panelProducoes.Name = "panelProducoes";
+            this.panelProducoes.Size = new System.Drawing.Size(174, 141);
+            this.panelProducoes.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(82, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "->";
+            // 
+            // txtLadoEsquerdo
+            // 
+            this.txtLadoEsquerdo.Location = new System.Drawing.Point(9, 50);
+            this.txtLadoEsquerdo.Name = "txtLadoEsquerdo";
+            this.txtLadoEsquerdo.Size = new System.Drawing.Size(53, 20);
+            this.txtLadoEsquerdo.TabIndex = 21;
+            // 
+            // txtLadoDireito
+            // 
+            this.txtLadoDireito.Location = new System.Drawing.Point(112, 50);
+            this.txtLadoDireito.Name = "txtLadoDireito";
+            this.txtLadoDireito.Size = new System.Drawing.Size(53, 20);
+            this.txtLadoDireito.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 576);
+            this.ClientSize = new System.Drawing.Size(468, 591);
+            this.Controls.Add(this.panelProducoes);
             this.Controls.Add(this.labelGramatica);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelSimbolos);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Trabalho Formais Parte Um";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelSimbolos.ResumeLayout(false);
+            this.panelSimbolos.PerformLayout();
+            this.panelProducoes.ResumeLayout(false);
+            this.panelProducoes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,12 +309,19 @@
         private System.Windows.Forms.TextBox txtTerminal;
         private System.Windows.Forms.Button btnAdicionarNT;
         private System.Windows.Forms.Button btnAdicionarT;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelSimbolos;
         private System.Windows.Forms.Button btnCriarProducoes;
         private System.Windows.Forms.Button btnSelecionarG;
         private System.Windows.Forms.ComboBox comboGerador;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelGramatica;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAdicionarProducao;
+        private System.Windows.Forms.Panel panelProducoes;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtLadoDireito;
+        private System.Windows.Forms.TextBox txtLadoEsquerdo;
     }
 }
 

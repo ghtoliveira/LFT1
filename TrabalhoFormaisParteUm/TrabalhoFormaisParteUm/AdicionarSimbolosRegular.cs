@@ -5,7 +5,10 @@ using System.Windows.Forms;
 namespace TrabalhoFormaisParteUm {
     class AdicionarSimbolosRegular {
 
-        ///TODO: Verificar se símbolo já não está na lista
+
+                
+        
+
         public static void adicionarNaoTerminal(string simbolo) {
             if(simbolo.Length > 1) {
                 MessageBox.Show("Símbolos não terminais devem conter apenas uma letra.", "Verifique seu símbolo");
@@ -27,12 +30,13 @@ namespace TrabalhoFormaisParteUm {
             }
         }
 
-        ///TODO: Verificar se símbolo já não está na lista
+
+        ///TODO: Consertar o símbolo vazio (&) não aparecendo no label de produções por alguma treta malígna
         public static void adicionarTerminal(string simbolo) {
             if(simbolo.Length > 1) {
                 MessageBox.Show("Símbolos terminais devem conter apenas uma letra ou dígito.", "Verifique seu símbolo");
                 return;
-            } else if (Regex.Matches(simbolo[0].ToString(),@"[0-9a-z]").Count == 0) {
+            } else if (Regex.Matches(simbolo[0].ToString(),@"[0-9a-z&]").Count == 0) {
                 MessageBox.Show("Símbolos terminais devem conter apenas letras minúsculas ou digitos.", "Verifique seu símbolo");
                 
                 return;

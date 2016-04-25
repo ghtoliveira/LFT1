@@ -6,6 +6,7 @@ namespace TrabalhoFormaisParteUm {
     static class Gramatica {
         static List<string> simbolosTerminais = new List<string>();
         static List<string> simbolosNaoTerminais = new List<string>();
+        static List<Producao> producoes = new List<Producao>();
         public static string simboloGerador { get; set; }
 
         public static bool adicionarTerminal(string simbolo) {
@@ -26,14 +27,8 @@ namespace TrabalhoFormaisParteUm {
             return true;
         }
         
-        public static List<string> getTerminais() {
-            return simbolosTerminais;
-        }
 
-        public static List<string> getNaoTerminais() {
-            return simbolosNaoTerminais;
-        }
-
+        // Boa sorte tentando melhorar esse método, ele deve ser minimizado para que nunca mais seja aberto. 
         public static string atualizarLabelGramatica() {
             string terminais = "";
             string naoTerminais = "";
@@ -53,11 +48,22 @@ namespace TrabalhoFormaisParteUm {
                     naoTerminais += "," + s;
             }
 
-            ///TODO: Pegar o símbolo de produção:
             //string gramatica = String.Format("G:({" + "{0}" + "}, " + "{1}" + "}, P, {" + "{2}" + "})", naoTerminais, terminais, "S");
             //Falta formatar esse carajo pra ter os {} antes dos conjuntos
             string gramatica = String.Format("G:({0}, {1}, P, {2})", naoTerminais, terminais, simboloGerador);
             return gramatica;
+        }
+
+        public static List<string> getTerminais() {
+            return simbolosTerminais;
+        }
+
+        public static List<string> getNaoTerminais() {
+            return simbolosNaoTerminais;
+        }
+
+        public static List<Producao> getProducoes() {
+            return producoes;
         }
 
     }

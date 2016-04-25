@@ -71,6 +71,13 @@ namespace TrabalhoFormaisParteUm {
 
         }
 
+        private void btnCriarProducoes_Click(object sender, EventArgs e) {
+            panelProducoes.Enabled = true;
+            panelSimbolos.Enabled = false;
+        }
 
+        private void btnAdicionarProducao_Click(object sender, EventArgs e) {
+            AdicionarProducaoRegular.adicionarProducao(txtLadoEsquerdo.Text, txtLadoDireito.Text);
+        }
     }
 }
