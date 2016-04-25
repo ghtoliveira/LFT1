@@ -38,7 +38,7 @@ namespace TrabalhoFormaisParteUm {
         private void btnAdicionarNT_Click(object sender, EventArgs e) {
             if(radioRegular.Checked) {
                 AdicionarSimbolosRegular.adicionarNaoTerminal(txtNaoTerminal.Text);
-                txtNaoTerminal.Text = "";
+                txtNaoTerminal.Text = ""; // Limpa o texto depois de adicionar
                 OnSimboloAdicionado();
             } else if (radioLivreDeContexto.Checked) {
                 // Adicionar livre de contexto
@@ -48,21 +48,18 @@ namespace TrabalhoFormaisParteUm {
         private void btnAdicionarT_Click(object sender, EventArgs e) {
             if (radioRegular.Checked) {
                 AdicionarSimbolosRegular.adicionarTerminal(txtTerminal.Text);
-                txtTerminal.Text = "";
+                txtTerminal.Text = ""; // Limpa o texto depois de adicionar
                 OnSimboloAdicionado();
             } else if (radioLivreDeContexto.Checked) {
                 // Adicionar livre de contexto
             }
         }
-
-
-
-
-
+        
 
         // Métodos próprios
 
         private void OnSimboloAdicionado() {
+
             labelGramatica.Text = Gramatica.atualizarLabelGramatica();
             ///TODO: Fazer com que isso só aconteça quando um NT é adicionado? 
             comboGerador.Items.Clear();
