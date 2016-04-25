@@ -23,8 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioRegular = new System.Windows.Forms.RadioButton();
+            this.radioLivreDeContexto = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -34,42 +34,42 @@
             this.btnAdicionarNT = new System.Windows.Forms.Button();
             this.btnAdicionarT = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboGerador = new System.Windows.Forms.ComboBox();
-            this.btnSelecionarG = new System.Windows.Forms.Button();
             this.btnCriarProducoes = new System.Windows.Forms.Button();
+            this.btnSelecionarG = new System.Windows.Forms.Button();
+            this.comboGerador = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.labelGramatica = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // radioRegular
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(113, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Gramática Regular";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioRegular.AutoSize = true;
+            this.radioRegular.Location = new System.Drawing.Point(3, 3);
+            this.radioRegular.Name = "radioRegular";
+            this.radioRegular.Size = new System.Drawing.Size(113, 17);
+            this.radioRegular.TabIndex = 0;
+            this.radioRegular.TabStop = true;
+            this.radioRegular.Text = "Gramática Regular";
+            this.radioRegular.UseVisualStyleBackColor = true;
+            this.radioRegular.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // radioLivreDeContexto
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(3, 26);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(159, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Gramática Livre de Contexto";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioLivreDeContexto.AutoSize = true;
+            this.radioLivreDeContexto.Location = new System.Drawing.Point(3, 26);
+            this.radioLivreDeContexto.Name = "radioLivreDeContexto";
+            this.radioLivreDeContexto.Size = new System.Drawing.Size(159, 17);
+            this.radioLivreDeContexto.TabIndex = 1;
+            this.radioLivreDeContexto.TabStop = true;
+            this.radioLivreDeContexto.Text = "Gramática Livre de Contexto";
+            this.radioLivreDeContexto.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioLivreDeContexto);
+            this.panel1.Controls.Add(this.radioRegular);
             this.panel1.Location = new System.Drawing.Point(12, 34);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(161, 53);
@@ -124,6 +124,7 @@
             this.btnAdicionarNT.TabIndex = 9;
             this.btnAdicionarNT.Text = "Adicionar NT";
             this.btnAdicionarNT.UseVisualStyleBackColor = true;
+            this.btnAdicionarNT.Click += new System.EventHandler(this.btnAdicionarNT_Click);
             // 
             // btnAdicionarT
             // 
@@ -133,6 +134,7 @@
             this.btnAdicionarT.TabIndex = 10;
             this.btnAdicionarT.Text = "Adicionar T";
             this.btnAdicionarT.UseVisualStyleBackColor = true;
+            this.btnAdicionarT.Click += new System.EventHandler(this.btnAdicionarT_Click);
             // 
             // panel2
             // 
@@ -152,15 +154,24 @@
             this.panel2.Size = new System.Drawing.Size(274, 201);
             this.panel2.TabIndex = 11;
             // 
-            // label4
+            // btnCriarProducoes
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Gerador:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.btnCriarProducoes.Location = new System.Drawing.Point(90, 153);
+            this.btnCriarProducoes.Name = "btnCriarProducoes";
+            this.btnCriarProducoes.Size = new System.Drawing.Size(95, 23);
+            this.btnCriarProducoes.TabIndex = 14;
+            this.btnCriarProducoes.Text = "Criar Produções";
+            this.btnCriarProducoes.UseVisualStyleBackColor = true;
+            // 
+            // btnSelecionarG
+            // 
+            this.btnSelecionarG.Location = new System.Drawing.Point(174, 115);
+            this.btnSelecionarG.Name = "btnSelecionarG";
+            this.btnSelecionarG.Size = new System.Drawing.Size(87, 23);
+            this.btnSelecionarG.TabIndex = 13;
+            this.btnSelecionarG.Text = "Selecionar";
+            this.btnSelecionarG.UseVisualStyleBackColor = true;
+            this.btnSelecionarG.Click += new System.EventHandler(this.btnSelecionarG_Click);
             // 
             // comboGerador
             // 
@@ -171,24 +182,15 @@
             this.comboGerador.TabIndex = 12;
             this.comboGerador.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // btnSelecionarG
+            // label4
             // 
-            this.btnSelecionarG.Location = new System.Drawing.Point(174, 115);
-            this.btnSelecionarG.Name = "btnSelecionarG";
-            this.btnSelecionarG.Size = new System.Drawing.Size(87, 23);
-            this.btnSelecionarG.TabIndex = 13;
-            this.btnSelecionarG.Text = "Selecionar";
-            this.btnSelecionarG.UseVisualStyleBackColor = true;
-            this.btnSelecionarG.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnCriarProducoes
-            // 
-            this.btnCriarProducoes.Location = new System.Drawing.Point(90, 153);
-            this.btnCriarProducoes.Name = "btnCriarProducoes";
-            this.btnCriarProducoes.Size = new System.Drawing.Size(95, 23);
-            this.btnCriarProducoes.TabIndex = 14;
-            this.btnCriarProducoes.Text = "Criar Produções";
-            this.btnCriarProducoes.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Gerador:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // labelGramatica
             // 
@@ -220,8 +222,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioRegular;
+        private System.Windows.Forms.RadioButton radioLivreDeContexto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
