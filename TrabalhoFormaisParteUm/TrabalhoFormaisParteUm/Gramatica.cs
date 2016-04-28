@@ -38,6 +38,7 @@ namespace TrabalhoFormaisParteUm {
                     terminais += s;
                 else
                     terminais += "," + s;
+                cAdicionados++;
             }
 
             cAdicionados = 0;
@@ -46,15 +47,13 @@ namespace TrabalhoFormaisParteUm {
                     naoTerminais += s;
                 else
                     naoTerminais += "," + s;
+                cAdicionados++;
             }
 
-
+            //string gramatica = String.Format("G:({" + "{0}" + "}, " + "{1}" + "}, P, {" + "{2}" + "})", naoTerminais, terminais, "S");
             //Falta formatar esse carajo pra ter os {} antes dos conjuntos
-            string test = "G:({" + string.Format("{0}", naoTerminais) + "}, {" + string.Format("{0}", terminais) + "}, P,";
-            test += string.Format("{0}", naoTerminais);
-
-            string gramatica = String.Format("G:({0}, {1}, P, {2})", naoTerminais, terminais, simboloGerador);
-            
+            //string gramatica = String.Format("G:({0}, {1}, P, {2})", naoTerminais, terminais, simboloGerador);
+            string gramatica = "G:({" + naoTerminais + "}, {" + terminais + "},P," + simboloGerador + ")";
             return gramatica;
         }
 

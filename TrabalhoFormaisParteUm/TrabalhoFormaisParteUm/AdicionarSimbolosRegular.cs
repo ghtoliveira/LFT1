@@ -5,10 +5,6 @@ using System.Windows.Forms;
 namespace TrabalhoFormaisParteUm {
     class AdicionarSimbolosRegular {
 
-
-                
-        
-
         public static void adicionarNaoTerminal(string simbolo) {
             if(simbolo.Length > 1) {
                 MessageBox.Show("Símbolos não terminais devem conter apenas uma letra.", "Verifique seu símbolo");

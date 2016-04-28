@@ -7,11 +7,5 @@ namespace TrabalhoFormaisParteUm {
         //Tava testando umas coisas com herança e poliformisfo mas não deu muito certo
         public virtual void adicionarTerminal(string simbolo) { }
         public virtual void adicionarNaoTerminal(string simbolo) { }
-
-
-
-
-
-
     }
 }
