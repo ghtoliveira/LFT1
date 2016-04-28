@@ -43,12 +43,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnAdicionarProducao = new System.Windows.Forms.Button();
             this.panelProducoes = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtLadoEsquerdo = new System.Windows.Forms.TextBox();
             this.txtLadoDireito = new System.Windows.Forms.TextBox();
+            this.txtLadoEsquerdo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tableProducoes = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panelConjuntoProducoes = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelSimbolos.SuspendLayout();
             this.panelProducoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableProducoes)).BeginInit();
+            this.panelConjuntoProducoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // radioRegular
@@ -78,7 +83,7 @@
             // 
             this.panel1.Controls.Add(this.radioLivreDeContexto);
             this.panel1.Controls.Add(this.radioRegular);
-            this.panel1.Location = new System.Drawing.Point(131, 12);
+            this.panel1.Location = new System.Drawing.Point(55, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(161, 53);
             this.panel1.TabIndex = 3;
@@ -157,7 +162,7 @@
             this.panelSimbolos.Controls.Add(this.txtTerminal);
             this.panelSimbolos.Controls.Add(this.label3);
             this.panelSimbolos.Controls.Add(this.txtNaoTerminal);
-            this.panelSimbolos.Location = new System.Drawing.Point(78, 92);
+            this.panelSimbolos.Location = new System.Drawing.Point(2, 92);
             this.panelSimbolos.Name = "panelSimbolos";
             this.panelSimbolos.Size = new System.Drawing.Size(274, 201);
             this.panelSimbolos.TabIndex = 11;
@@ -204,7 +209,7 @@
             // labelGramatica
             // 
             this.labelGramatica.AutoSize = true;
-            this.labelGramatica.Location = new System.Drawing.Point(162, 324);
+            this.labelGramatica.Location = new System.Drawing.Point(86, 324);
             this.labelGramatica.Name = "labelGramatica";
             this.labelGramatica.Size = new System.Drawing.Size(105, 13);
             this.labelGramatica.TabIndex = 15;
@@ -247,10 +252,24 @@
             this.panelProducoes.Controls.Add(this.btnAdicionarProducao);
             this.panelProducoes.Controls.Add(this.label5);
             this.panelProducoes.Enabled = false;
-            this.panelProducoes.Location = new System.Drawing.Point(119, 364);
+            this.panelProducoes.Location = new System.Drawing.Point(43, 364);
             this.panelProducoes.Name = "panelProducoes";
             this.panelProducoes.Size = new System.Drawing.Size(174, 141);
             this.panelProducoes.TabIndex = 20;
+            // 
+            // txtLadoDireito
+            // 
+            this.txtLadoDireito.Location = new System.Drawing.Point(112, 50);
+            this.txtLadoDireito.Name = "txtLadoDireito";
+            this.txtLadoDireito.Size = new System.Drawing.Size(53, 20);
+            this.txtLadoDireito.TabIndex = 22;
+            // 
+            // txtLadoEsquerdo
+            // 
+            this.txtLadoEsquerdo.Location = new System.Drawing.Point(9, 50);
+            this.txtLadoEsquerdo.Name = "txtLadoEsquerdo";
+            this.txtLadoEsquerdo.Size = new System.Drawing.Size(53, 20);
+            this.txtLadoEsquerdo.TabIndex = 21;
             // 
             // label7
             // 
@@ -261,25 +280,38 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "->";
             // 
-            // txtLadoEsquerdo
+            // tableProducoes
             // 
-            this.txtLadoEsquerdo.Location = new System.Drawing.Point(9, 50);
-            this.txtLadoEsquerdo.Name = "txtLadoEsquerdo";
-            this.txtLadoEsquerdo.Size = new System.Drawing.Size(53, 20);
-            this.txtLadoEsquerdo.TabIndex = 21;
+            this.tableProducoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableProducoes.Location = new System.Drawing.Point(14, 25);
+            this.tableProducoes.Name = "tableProducoes";
+            this.tableProducoes.Size = new System.Drawing.Size(330, 205);
+            this.tableProducoes.TabIndex = 21;
             // 
-            // txtLadoDireito
+            // label8
             // 
-            this.txtLadoDireito.Location = new System.Drawing.Point(112, 50);
-            this.txtLadoDireito.Name = "txtLadoDireito";
-            this.txtLadoDireito.Size = new System.Drawing.Size(53, 20);
-            this.txtLadoDireito.TabIndex = 22;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(134, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Conjunto de Produções";
+            // 
+            // panelConjuntoProducoes
+            // 
+            this.panelConjuntoProducoes.Controls.Add(this.tableProducoes);
+            this.panelConjuntoProducoes.Controls.Add(this.label8);
+            this.panelConjuntoProducoes.Location = new System.Drawing.Point(304, 38);
+            this.panelConjuntoProducoes.Name = "panelConjuntoProducoes";
+            this.panelConjuntoProducoes.Size = new System.Drawing.Size(360, 287);
+            this.panelConjuntoProducoes.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 570);
+            this.ClientSize = new System.Drawing.Size(869, 570);
+            this.Controls.Add(this.panelConjuntoProducoes);
             this.Controls.Add(this.panelProducoes);
             this.Controls.Add(this.labelGramatica);
             this.Controls.Add(this.panelSimbolos);
@@ -292,6 +324,9 @@
             this.panelSimbolos.PerformLayout();
             this.panelProducoes.ResumeLayout(false);
             this.panelProducoes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableProducoes)).EndInit();
+            this.panelConjuntoProducoes.ResumeLayout(false);
+            this.panelConjuntoProducoes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,6 +357,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtLadoDireito;
         private System.Windows.Forms.TextBox txtLadoEsquerdo;
+        private System.Windows.Forms.DataGridView tableProducoes;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panelConjuntoProducoes;
     }
 }
 
