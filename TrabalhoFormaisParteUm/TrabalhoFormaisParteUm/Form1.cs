@@ -80,11 +80,12 @@ namespace TrabalhoFormaisParteUm {
             ///Todo: Adicionar campo na tabela apenas se ele foi adicionar à produção, não adicionar o header toda vez que fizer uma inserção, impedir o usuário de adicionar
             ///novos rows à tabela por meio da UI. (Mudar a propriedade enableUserToAddRows pra false não funciona, ele acaba proibindo o próprio programa de adicionar
             ///rows também pro meio de código.
+            
             AdicionarProducaoRegular.adicionarProducao(txtLadoEsquerdo.Text, txtLadoDireito.Text);
             InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
             InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { txtLadoEsquerdo.Text, txtLadoDireito.Text });
-            
-            
+            GeradorDeProducoes.gerarProducoesRegulares(10);
+
         }
     }
 }
