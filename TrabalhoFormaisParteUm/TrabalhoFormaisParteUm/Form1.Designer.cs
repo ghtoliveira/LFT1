@@ -49,6 +49,7 @@
             this.tableProducoes = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panelConjuntoProducoes = new System.Windows.Forms.Panel();
+            this.btnGerarSentencas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelSimbolos.SuspendLayout();
             this.panelProducoes.SuspendLayout();
@@ -285,13 +286,13 @@
             this.tableProducoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableProducoes.Location = new System.Drawing.Point(14, 25);
             this.tableProducoes.Name = "tableProducoes";
-            this.tableProducoes.Size = new System.Drawing.Size(330, 205);
+            this.tableProducoes.Size = new System.Drawing.Size(238, 205);
             this.tableProducoes.TabIndex = 21;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(134, 9);
+            this.label8.Location = new System.Drawing.Point(78, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 13);
             this.label8.TabIndex = 22;
@@ -299,12 +300,22 @@
             // 
             // panelConjuntoProducoes
             // 
+            this.panelConjuntoProducoes.Controls.Add(this.btnGerarSentencas);
             this.panelConjuntoProducoes.Controls.Add(this.tableProducoes);
             this.panelConjuntoProducoes.Controls.Add(this.label8);
             this.panelConjuntoProducoes.Location = new System.Drawing.Point(304, 38);
             this.panelConjuntoProducoes.Name = "panelConjuntoProducoes";
-            this.panelConjuntoProducoes.Size = new System.Drawing.Size(360, 287);
+            this.panelConjuntoProducoes.Size = new System.Drawing.Size(268, 281);
             this.panelConjuntoProducoes.TabIndex = 23;
+            // 
+            // btnGerarSentencas
+            // 
+            this.btnGerarSentencas.Location = new System.Drawing.Point(90, 236);
+            this.btnGerarSentencas.Name = "btnGerarSentencas";
+            this.btnGerarSentencas.Size = new System.Drawing.Size(106, 23);
+            this.btnGerarSentencas.TabIndex = 23;
+            this.btnGerarSentencas.Text = "Gerar Sentenças";
+            this.btnGerarSentencas.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -360,6 +371,7 @@
         private System.Windows.Forms.DataGridView tableProducoes;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelConjuntoProducoes;
+        private System.Windows.Forms.Button btnGerarSentencas;
     }
 }
 
