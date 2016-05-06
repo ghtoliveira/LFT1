@@ -7,6 +7,7 @@ namespace TrabalhoFormaisParteUm {
         static List<string> simbolosTerminais = new List<string>();
         static List<string> simbolosNaoTerminais = new List<string>();
         static List<Producao> producoes = new List<Producao>();
+        
         public static string simboloGerador { get; set; }
 
         public static bool adicionarTerminal(string simbolo) {
@@ -69,5 +70,24 @@ namespace TrabalhoFormaisParteUm {
             return producoes;
         }
 
+      
+
+        public static void adicionarProducao(string ladoEsquerdo, string ladoDireito) {
+            //Variável usada pra verificar se uma produção com o mesmo NT já existe
+            bool existe = false;
+            foreach (Producao p in producoes) {
+                if(p.esquerdo[0].ToString() == ladoEsquerdo) {
+                    p.direitos.Add(ladoDireito);
+                    Console.WriteLine("Producao:" + p.esquerdo[0].ToString() + "\n" + p.direitos[0].ToString() + " " + p.direitos[1].ToString());
+                    return;
+                }
+            }
+
+            if (!existe) {
+                Producao p = new Producao(ladoEsquerdo, ladoDireito);
+                producoes.Add(p);
+                
+            }
+        }
     }
 }

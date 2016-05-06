@@ -9,13 +9,16 @@ namespace TrabalhoFormaisParteUm {
     class Producao {
 
         public string esquerdo { get; set; }
-        public string direito { get; set; }
+        public List<string> direitos { get; set; }
 
         public Producao(string esquerdo, string direito) {
-            this.direito = direito;
+            this.direitos = new List<string>();
+            this.direitos.Add(direito);
             this.esquerdo = esquerdo;
         }
 
-        public Producao() { }
+        public Producao() {
+            direitos = new List<string>();
+        }
     }
 }
