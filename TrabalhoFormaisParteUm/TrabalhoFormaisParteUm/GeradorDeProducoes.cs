@@ -21,9 +21,10 @@ namespace TrabalhoFormaisParteUm {
             for (int c = 0; c < nProducoes; c++) {
                 pos = rnd.Next(producoes.Count());
 
-                producao += producoes.ElementAt(pos).direito;
+                producao += producoes.ElementAt(pos).direitos;
                 
             }
+
 
             Console.WriteLine(producao);
 

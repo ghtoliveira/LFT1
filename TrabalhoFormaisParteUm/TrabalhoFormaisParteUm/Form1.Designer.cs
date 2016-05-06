@@ -25,7 +25,8 @@
         private void InitializeComponent() {
             this.radioRegular = new System.Windows.Forms.RadioButton();
             this.radioLivreDeContexto = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelTipoGramatica = new System.Windows.Forms.Panel();
+            this.btnAdicionarSimbolos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,14 +44,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnAdicionarProducao = new System.Windows.Forms.Button();
             this.panelProducoes = new System.Windows.Forms.Panel();
+            this.comboLadoEsquerdo = new System.Windows.Forms.ComboBox();
             this.txtLadoDireito = new System.Windows.Forms.TextBox();
-            this.txtLadoEsquerdo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tableProducoes = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panelConjuntoProducoes = new System.Windows.Forms.Panel();
             this.btnGerarSentencas = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panelTipoGramatica.SuspendLayout();
             this.panelSimbolos.SuspendLayout();
             this.panelProducoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableProducoes)).BeginInit();
@@ -80,14 +81,25 @@
             this.radioLivreDeContexto.Text = "Gramática Livre de Contexto";
             this.radioLivreDeContexto.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panelTipoGramatica
             // 
-            this.panel1.Controls.Add(this.radioLivreDeContexto);
-            this.panel1.Controls.Add(this.radioRegular);
-            this.panel1.Location = new System.Drawing.Point(55, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 53);
-            this.panel1.TabIndex = 3;
+            this.panelTipoGramatica.Controls.Add(this.btnAdicionarSimbolos);
+            this.panelTipoGramatica.Controls.Add(this.radioLivreDeContexto);
+            this.panelTipoGramatica.Controls.Add(this.radioRegular);
+            this.panelTipoGramatica.Location = new System.Drawing.Point(55, 12);
+            this.panelTipoGramatica.Name = "panelTipoGramatica";
+            this.panelTipoGramatica.Size = new System.Drawing.Size(161, 74);
+            this.panelTipoGramatica.TabIndex = 3;
+            // 
+            // btnAdicionarSimbolos
+            // 
+            this.btnAdicionarSimbolos.Location = new System.Drawing.Point(26, 48);
+            this.btnAdicionarSimbolos.Name = "btnAdicionarSimbolos";
+            this.btnAdicionarSimbolos.Size = new System.Drawing.Size(110, 23);
+            this.btnAdicionarSimbolos.TabIndex = 2;
+            this.btnAdicionarSimbolos.Text = "Adicionar Símbolos";
+            this.btnAdicionarSimbolos.UseVisualStyleBackColor = true;
+            this.btnAdicionarSimbolos.Click += new System.EventHandler(this.btnAdicionarSimbolos_Click);
             // 
             // label1
             // 
@@ -163,6 +175,7 @@
             this.panelSimbolos.Controls.Add(this.txtTerminal);
             this.panelSimbolos.Controls.Add(this.label3);
             this.panelSimbolos.Controls.Add(this.txtNaoTerminal);
+            this.panelSimbolos.Enabled = false;
             this.panelSimbolos.Location = new System.Drawing.Point(2, 92);
             this.panelSimbolos.Name = "panelSimbolos";
             this.panelSimbolos.Size = new System.Drawing.Size(274, 201);
@@ -246,8 +259,8 @@
             // 
             // panelProducoes
             // 
+            this.panelProducoes.Controls.Add(this.comboLadoEsquerdo);
             this.panelProducoes.Controls.Add(this.txtLadoDireito);
-            this.panelProducoes.Controls.Add(this.txtLadoEsquerdo);
             this.panelProducoes.Controls.Add(this.label7);
             this.panelProducoes.Controls.Add(this.label6);
             this.panelProducoes.Controls.Add(this.btnAdicionarProducao);
@@ -258,19 +271,20 @@
             this.panelProducoes.Size = new System.Drawing.Size(174, 141);
             this.panelProducoes.TabIndex = 20;
             // 
+            // comboLadoEsquerdo
+            // 
+            this.comboLadoEsquerdo.FormattingEnabled = true;
+            this.comboLadoEsquerdo.Location = new System.Drawing.Point(15, 49);
+            this.comboLadoEsquerdo.Name = "comboLadoEsquerdo";
+            this.comboLadoEsquerdo.Size = new System.Drawing.Size(39, 21);
+            this.comboLadoEsquerdo.TabIndex = 15;
+            // 
             // txtLadoDireito
             // 
             this.txtLadoDireito.Location = new System.Drawing.Point(112, 50);
             this.txtLadoDireito.Name = "txtLadoDireito";
             this.txtLadoDireito.Size = new System.Drawing.Size(53, 20);
             this.txtLadoDireito.TabIndex = 22;
-            // 
-            // txtLadoEsquerdo
-            // 
-            this.txtLadoEsquerdo.Location = new System.Drawing.Point(9, 50);
-            this.txtLadoEsquerdo.Name = "txtLadoEsquerdo";
-            this.txtLadoEsquerdo.Size = new System.Drawing.Size(53, 20);
-            this.txtLadoEsquerdo.TabIndex = 21;
             // 
             // label7
             // 
@@ -326,11 +340,12 @@
             this.Controls.Add(this.panelProducoes);
             this.Controls.Add(this.labelGramatica);
             this.Controls.Add(this.panelSimbolos);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelTipoGramatica);
             this.Name = "Form1";
             this.Text = "Trabalho Formais Parte Um";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.panelTipoGramatica.ResumeLayout(false);
+            this.panelTipoGramatica.PerformLayout();
             this.panelSimbolos.ResumeLayout(false);
             this.panelSimbolos.PerformLayout();
             this.panelProducoes.ResumeLayout(false);
@@ -347,7 +362,7 @@
 
         private System.Windows.Forms.RadioButton radioRegular;
         private System.Windows.Forms.RadioButton radioLivreDeContexto;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelTipoGramatica;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -367,11 +382,12 @@
         private System.Windows.Forms.Panel panelProducoes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtLadoDireito;
-        private System.Windows.Forms.TextBox txtLadoEsquerdo;
         private System.Windows.Forms.DataGridView tableProducoes;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelConjuntoProducoes;
         private System.Windows.Forms.Button btnGerarSentencas;
+        private System.Windows.Forms.Button btnAdicionarSimbolos;
+        private System.Windows.Forms.ComboBox comboLadoEsquerdo;
     }
 }
 
