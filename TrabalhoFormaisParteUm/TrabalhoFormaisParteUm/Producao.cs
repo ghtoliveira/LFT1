@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TrabalhoFormaisParteUm {
+
     class Producao {
+
         public string esquerdo { get; set; }
         public List<string> direitos { get; set; }
 

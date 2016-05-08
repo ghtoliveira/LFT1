@@ -5,10 +5,6 @@ using System.Windows.Forms;
 namespace TrabalhoFormaisParteUm {
     class AdicionarSimbolosRegular {
 
-
-                
-        
-
         public static void adicionarNaoTerminal(string simbolo) {
             if (String.IsNullOrEmpty(simbolo)) {
                 MessageBox.Show("Símbolos não podem estar vazios.", "Verifique seu símbolo");
