@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="AdicionarProducaoRegular.cs" />
     <Compile Include="AdicionarSimbolosRegular.cs" />
+    <Compile Include="AutomatoFinito.cs" />
+    <Compile Include="ExpressaoRegular.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

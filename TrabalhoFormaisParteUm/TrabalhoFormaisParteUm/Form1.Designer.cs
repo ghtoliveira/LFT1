@@ -51,11 +51,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panelConjuntoProducoes = new System.Windows.Forms.Panel();
             this.btnGerarSentencas = new System.Windows.Forms.Button();
+            this.automatoFinito = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.inputExpressoes = new System.Windows.Forms.TextBox();
+            this.adicionaExpressao = new System.Windows.Forms.Button();
+            this.tableExpressoes = new System.Windows.Forms.DataGridView();
             this.panelTipoGramatica.SuspendLayout();
             this.panelSimbolos.SuspendLayout();
             this.panelProducoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableProducoes)).BeginInit();
             this.panelConjuntoProducoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.automatoFinito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableExpressoes)).BeginInit();
             this.SuspendLayout();
             // 
             // radioRegular
@@ -331,11 +339,68 @@
             this.btnGerarSentencas.Text = "Gerar Sentenças";
             this.btnGerarSentencas.UseVisualStyleBackColor = true;
             // 
+            // automatoFinito
+            // 
+            this.automatoFinito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.automatoFinito.Location = new System.Drawing.Point(676, 324);
+            this.automatoFinito.Name = "automatoFinito";
+            this.automatoFinito.Size = new System.Drawing.Size(267, 205);
+            this.automatoFinito.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(763, 306);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Automato Finito";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(750, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Expressões Regulares";
+            // 
+            // inputExpressoes
+            // 
+            this.inputExpressoes.Location = new System.Drawing.Point(676, 60);
+            this.inputExpressoes.Name = "inputExpressoes";
+            this.inputExpressoes.Size = new System.Drawing.Size(267, 20);
+            this.inputExpressoes.TabIndex = 27;
+            // 
+            // adicionaExpressao
+            // 
+            this.adicionaExpressao.Location = new System.Drawing.Point(741, 92);
+            this.adicionaExpressao.Name = "adicionaExpressao";
+            this.adicionaExpressao.Size = new System.Drawing.Size(129, 23);
+            this.adicionaExpressao.TabIndex = 28;
+            this.adicionaExpressao.Text = "Adicionar Expressão";
+            this.adicionaExpressao.UseVisualStyleBackColor = true;
+            this.adicionaExpressao.Click += new System.EventHandler(this.adicionaExpressao_Click);
+            // 
+            // tableExpressoes
+            // 
+            this.tableExpressoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableExpressoes.Location = new System.Drawing.Point(676, 121);
+            this.tableExpressoes.Name = "tableExpressoes";
+            this.tableExpressoes.Size = new System.Drawing.Size(267, 150);
+            this.tableExpressoes.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 570);
+            this.ClientSize = new System.Drawing.Size(1011, 570);
+            this.Controls.Add(this.tableExpressoes);
+            this.Controls.Add(this.adicionaExpressao);
+            this.Controls.Add(this.inputExpressoes);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.automatoFinito);
             this.Controls.Add(this.panelConjuntoProducoes);
             this.Controls.Add(this.panelProducoes);
             this.Controls.Add(this.labelGramatica);
@@ -353,6 +418,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableProducoes)).EndInit();
             this.panelConjuntoProducoes.ResumeLayout(false);
             this.panelConjuntoProducoes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.automatoFinito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableExpressoes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,6 +455,12 @@
         private System.Windows.Forms.Button btnGerarSentencas;
         private System.Windows.Forms.Button btnAdicionarSimbolos;
         private System.Windows.Forms.ComboBox comboLadoEsquerdo;
+        private System.Windows.Forms.DataGridView automatoFinito;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox inputExpressoes;
+        private System.Windows.Forms.Button adicionaExpressao;
+        private System.Windows.Forms.DataGridView tableExpressoes;
     }
 }
 

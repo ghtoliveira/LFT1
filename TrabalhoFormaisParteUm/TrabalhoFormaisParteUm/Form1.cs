@@ -97,5 +97,10 @@ namespace TrabalhoFormaisParteUm {
             panelSimbolos.Enabled = true;
             panelTipoGramatica.Enabled = false;
         }
+
+        private void adicionaExpressao_Click(object sender, EventArgs e)
+        {
+            ExpressaoRegular.SetarExpressao(tableExpressoes, inputExpressoes.Text);
+        }
     }
 }
