@@ -75,8 +75,12 @@ namespace TrabalhoFormaisParteUm {
         }
 
         private void btnCriarProducoes_Click(object sender, EventArgs e) {
-            panelProducoes.Enabled = true;
-            panelSimbolos.Enabled = false;
+            if (String.IsNullOrEmpty(Gramatica.simboloGerador))
+                MessageBox.Show("Você precisa selecionar um símbolo gerador para sua gramática antes de criar produções.", "Adicione um símbolo gerador");
+            else {
+                panelProducoes.Enabled = true;
+                panelSimbolos.Enabled = false;
+            }
         }
 
         private void btnAdicionarProducao_Click(object sender, EventArgs e) {
@@ -88,7 +92,7 @@ namespace TrabalhoFormaisParteUm {
                 InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
                 InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
             }
-            //GeradorDeProducoes.gerarProducoesRegulares(10);
+            
 
         }
 
@@ -99,6 +103,12 @@ namespace TrabalhoFormaisParteUm {
         private void btnAdicionarSimbolos_Click(object sender, EventArgs e) {
             panelSimbolos.Enabled = true;
             panelTipoGramatica.Enabled = false;
+        }
+
+        private void btnGerarSentencas_Click(object sender, EventArgs e) {
+            GeradorDeProducoes gerador = new GeradorDeProducoes();
+            string producao = gerador.gerarProducoesRegulares();
+            
         }
     }
 }

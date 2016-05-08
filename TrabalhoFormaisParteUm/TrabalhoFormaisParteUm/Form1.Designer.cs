@@ -330,6 +330,7 @@
             this.btnGerarSentencas.TabIndex = 23;
             this.btnGerarSentencas.Text = "Gerar Sentenças";
             this.btnGerarSentencas.UseVisualStyleBackColor = true;
+            this.btnGerarSentencas.Click += new System.EventHandler(this.btnGerarSentencas_Click);
             // 
             // Form1
             // 

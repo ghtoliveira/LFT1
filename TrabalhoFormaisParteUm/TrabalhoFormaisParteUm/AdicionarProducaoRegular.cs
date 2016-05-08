@@ -50,11 +50,22 @@ namespace TrabalhoFormaisParteUm {
             }
 
 
-            //Adiciona a produção ao conjunto de produções pois passo por todas as verificações.
-            Gramatica.getProducoes().Add(new Producao(ladoEsquerdo, ladoDireito));
+            //Adiciona a produção ao conjunto de produções pois passou por todas as verificações.
+            Producao prod = Gramatica.getProducoes().Find(x => x.esquerdo == ladoEsquerdo);
+
+            if (prod == null){
+                Gramatica.getProducoes().Add(new Producao(ladoEsquerdo, ladoDireito));
+            } else {
+                prod.direitos.Add(ladoDireito);
+            }
             
+            
+            //Gramatica.getProducoes().Add(new Producao(ladoEsquerdo, ladoDireito));
+
+            Console.WriteLine("Produções já adicionadas:");
             foreach (Producao p in Gramatica.getProducoes())
-                Console.WriteLine("Producao: " + p.esquerdo + " -> " + p.direitos);
+                for(int c = 0; c < p.direitos.Count; c++)
+                Console.WriteLine("Producao: " + p.esquerdo + " -> " + p.direitos[c]);
 
             return true;
 
