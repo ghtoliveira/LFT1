@@ -57,6 +57,7 @@
             this.inputExpressoes = new System.Windows.Forms.TextBox();
             this.adicionaExpressao = new System.Windows.Forms.Button();
             this.tableExpressoes = new System.Windows.Forms.DataGridView();
+            this.adicionarAutomato = new System.Windows.Forms.Button();
             this.panelTipoGramatica.SuspendLayout();
             this.panelSimbolos.SuspendLayout();
             this.panelProducoes.SuspendLayout();
@@ -342,7 +343,7 @@
             // automatoFinito
             // 
             this.automatoFinito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.automatoFinito.Location = new System.Drawing.Point(676, 324);
+            this.automatoFinito.Location = new System.Drawing.Point(676, 353);
             this.automatoFinito.Name = "automatoFinito";
             this.automatoFinito.Size = new System.Drawing.Size(267, 205);
             this.automatoFinito.TabIndex = 24;
@@ -390,11 +391,22 @@
             this.tableExpressoes.Size = new System.Drawing.Size(267, 150);
             this.tableExpressoes.TabIndex = 29;
             // 
+            // adicionarAutomato
+            // 
+            this.adicionarAutomato.Location = new System.Drawing.Point(766, 324);
+            this.adicionarAutomato.Name = "adicionarAutomato";
+            this.adicionarAutomato.Size = new System.Drawing.Size(75, 23);
+            this.adicionarAutomato.TabIndex = 30;
+            this.adicionarAutomato.Text = "Adicionar";
+            this.adicionarAutomato.UseVisualStyleBackColor = true;
+            this.adicionarAutomato.Click += new System.EventHandler(this.adicionarAutomato_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 570);
+            this.Controls.Add(this.adicionarAutomato);
             this.Controls.Add(this.tableExpressoes);
             this.Controls.Add(this.adicionaExpressao);
             this.Controls.Add(this.inputExpressoes);
@@ -461,6 +473,7 @@
         private System.Windows.Forms.TextBox inputExpressoes;
         private System.Windows.Forms.Button adicionaExpressao;
         private System.Windows.Forms.DataGridView tableExpressoes;
+        private System.Windows.Forms.Button adicionarAutomato;
     }
 }
 

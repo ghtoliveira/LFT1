@@ -20,5 +20,10 @@ namespace TrabalhoFormaisParteUm {
         public Producao() {
             direitos = new List<string>();
         }
+
+        public Producao(string esquerdo) {
+            direitos = new List<string>();
+            this.esquerdo = esquerdo;
+        }
     }
 }
