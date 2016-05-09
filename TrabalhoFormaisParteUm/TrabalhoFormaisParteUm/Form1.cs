@@ -110,5 +110,9 @@ namespace TrabalhoFormaisParteUm {
             string producao = gerador.gerarProducoesRegulares();
             
         }
+
+        private void adicionaExpressao_Click(object sender, EventArgs e) {
+
+        }
     }
 }
