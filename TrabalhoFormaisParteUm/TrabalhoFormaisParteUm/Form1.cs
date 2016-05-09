@@ -100,7 +100,10 @@ namespace TrabalhoFormaisParteUm {
 
         private void adicionaExpressao_Click(object sender, EventArgs e)
         {
-            ExpressaoRegular.SetarExpressao(tableExpressoes, inputExpressoes.Text);
+            if (ExpressaoRegular.Validacoes(inputExpressoes.Text))
+            {
+                ExpressaoRegular.SetarExpressao(tableExpressoes, inputExpressoes.Text);
+            }
         }
     }
 }

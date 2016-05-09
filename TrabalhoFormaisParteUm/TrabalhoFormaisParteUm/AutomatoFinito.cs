@@ -9,22 +9,31 @@ namespace TrabalhoFormaisParteUm
     static class AutomatoFinito
     {
 
-        static List<char> estados;
-        static int estadoAtual;
-        
+        static List<Estado> estados = new List<Estado>();
+        static Estado estadoAtual = new Estado();
+        static int charAtual = 0;
+
+
         static void ResetAutomato()
         {
-            estados = new List<char>();
-            for (int i = 65; i <= 90; i++)
-            {
-                estados.Add((char)i);
-            }
-            estadoAtual = 0;
-        }
+            
+            estadoAtual.estado = (char)65;
+            estadoAtual.proximoEstado = ' ';
+            estadoAtual.transacao = ' ';
 
+            
+        }
+        
         static void AdicionarTransacao(bool proximo)
         {
             
+        }
+
+        public struct Estado
+        {
+            public char estado { get; set; }
+            public char proximoEstado { get; set; }
+            public char transacao { get; set; }
         }
 
     }
