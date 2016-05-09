@@ -57,6 +57,10 @@
             this.inputExpressoes = new System.Windows.Forms.TextBox();
             this.adicionaExpressao = new System.Windows.Forms.Button();
             this.tableExpressoes = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelSentenca = new System.Windows.Forms.Label();
+            this.textTamanhoMaximo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panelTipoGramatica.SuspendLayout();
             this.panelSimbolos.SuspendLayout();
             this.panelProducoes.SuspendLayout();
@@ -322,17 +326,21 @@
             // 
             // panelConjuntoProducoes
             // 
+            this.panelConjuntoProducoes.Controls.Add(this.label13);
+            this.panelConjuntoProducoes.Controls.Add(this.textTamanhoMaximo);
+            this.panelConjuntoProducoes.Controls.Add(this.labelSentenca);
+            this.panelConjuntoProducoes.Controls.Add(this.label11);
             this.panelConjuntoProducoes.Controls.Add(this.btnGerarSentencas);
             this.panelConjuntoProducoes.Controls.Add(this.tableProducoes);
             this.panelConjuntoProducoes.Controls.Add(this.label8);
             this.panelConjuntoProducoes.Location = new System.Drawing.Point(304, 38);
             this.panelConjuntoProducoes.Name = "panelConjuntoProducoes";
-            this.panelConjuntoProducoes.Size = new System.Drawing.Size(268, 281);
+            this.panelConjuntoProducoes.Size = new System.Drawing.Size(268, 355);
             this.panelConjuntoProducoes.TabIndex = 23;
             // 
             // btnGerarSentencas
             // 
-            this.btnGerarSentencas.Location = new System.Drawing.Point(90, 236);
+            this.btnGerarSentencas.Location = new System.Drawing.Point(72, 268);
             this.btnGerarSentencas.Name = "btnGerarSentencas";
             this.btnGerarSentencas.Size = new System.Drawing.Size(106, 23);
             this.btnGerarSentencas.TabIndex = 23;
@@ -390,6 +398,40 @@
             this.tableExpressoes.Name = "tableExpressoes";
             this.tableExpressoes.Size = new System.Drawing.Size(267, 150);
             this.tableExpressoes.TabIndex = 29;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(110, 311);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Sentença";
+            // 
+            // labelSentenca
+            // 
+            this.labelSentenca.AutoSize = true;
+            this.labelSentenca.Location = new System.Drawing.Point(108, 329);
+            this.labelSentenca.Name = "labelSentenca";
+            this.labelSentenca.Size = new System.Drawing.Size(55, 13);
+            this.labelSentenca.TabIndex = 32;
+            this.labelSentenca.Text = "aaaabbbb";
+            // 
+            // textTamanhoMaximo
+            // 
+            this.textTamanhoMaximo.Location = new System.Drawing.Point(131, 236);
+            this.textTamanhoMaximo.Name = "textTamanhoMaximo";
+            this.textTamanhoMaximo.Size = new System.Drawing.Size(32, 20);
+            this.textTamanhoMaximo.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 239);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 13);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Tamanho máximo:";
             // 
             // Form1
             // 
@@ -462,6 +504,10 @@
         private System.Windows.Forms.TextBox inputExpressoes;
         private System.Windows.Forms.Button adicionaExpressao;
         private System.Windows.Forms.DataGridView tableExpressoes;
+        private System.Windows.Forms.Label labelSentenca;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textTamanhoMaximo;
     }
 }
 

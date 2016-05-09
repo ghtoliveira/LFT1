@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdicionarProducaoRegular.cs" />
+    <Compile Include="AdicionarProducao.cs" />
     <Compile Include="AdicionarSimbolosRegular.cs" />
     <Compile Include="AutomatoFinito.cs" />
     <Compile Include="ExpressaoRegular.cs" />
@@ -62,7 +62,6 @@
     <Compile Include="Producao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AdicionarSimbolos.cs" />
     <Compile Include="Sentenca.cs" />
     <Compile Include="Simbolo.cs" />
     <EmbeddedResource Include="Form1.resx">

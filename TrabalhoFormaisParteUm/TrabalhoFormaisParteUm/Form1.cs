@@ -22,7 +22,6 @@ namespace TrabalhoFormaisParteUm {
         }
 
         private void btnSelecionarG_Click(object sender, EventArgs e) {
-            Console.WriteLine("Gerador");
             Gramatica.simboloGerador = comboGerador.Text;
             OnSimboloAdicionado();
         }
@@ -36,23 +35,16 @@ namespace TrabalhoFormaisParteUm {
         }
 
         private void btnAdicionarNT_Click(object sender, EventArgs e) {
-            if(radioRegular.Checked) {
-                AdicionarSimbolosRegular.adicionarNaoTerminal(txtNaoTerminal.Text);
-                txtNaoTerminal.Text = "";
-                OnSimboloAdicionado();
-            } else if (radioLivreDeContexto.Checked) {
-                // Adicionar livre de contexto
-            }
+            AdicionarSimbolosRegular.adicionarNaoTerminal(txtNaoTerminal.Text);
+            txtNaoTerminal.Text = "";
+            OnSimboloAdicionado();
+            
         }
 
         private void btnAdicionarT_Click(object sender, EventArgs e) {
-            if (radioRegular.Checked) {
-                AdicionarSimbolosRegular.adicionarTerminal(txtTerminal.Text);
-                txtTerminal.Text = "";
-                OnSimboloAdicionado();
-            } else if (radioLivreDeContexto.Checked) {
-                // Adicionar livre de contexto
-            }
+            AdicionarSimbolosRegular.adicionarTerminal(txtTerminal.Text, radioRegular.Checked);
+            txtTerminal.Text = "";
+            OnSimboloAdicionado();
         }
 
 
@@ -64,7 +56,6 @@ namespace TrabalhoFormaisParteUm {
 
         private void OnSimboloAdicionado() {
             labelGramatica.Text = Gramatica.atualizarLabelGramatica();
-            ///TODO: Fazer com que isso só aconteça quando um NT é adicionado? 
             comboGerador.Items.Clear();
             comboLadoEsquerdo.Items.Clear();
             foreach (string s in Gramatica.getNaoTerminais()) {
@@ -88,11 +79,19 @@ namespace TrabalhoFormaisParteUm {
             ///novos rows à tabela por meio da UI. (Mudar a propriedade enableUserToAddRows pra false não funciona, ele acaba proibindo o próprio programa de adicionar
             ///rows também pro meio de código.
 
-            if (AdicionarProducaoRegular.adicionarProducao(comboLadoEsquerdo.Text, txtLadoDireito.Text)) {
-                InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
-                InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
+            if (radioRegular.Checked) {
+                if (AdicionarProducao.adicionarProducaoRegular(comboLadoEsquerdo.Text, txtLadoDireito.Text)) {
+                    InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
+                    InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
+                }
+            } else if (radioLivreDeContexto.Checked) {
+                if (AdicionarProducao.adicionarProducaoLC(comboLadoEsquerdo.Text, txtLadoDireito.Text)) {
+                    InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
+                    InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
+                }
             }
-            
+
+
 
         }
 
@@ -107,8 +106,8 @@ namespace TrabalhoFormaisParteUm {
 
         private void btnGerarSentencas_Click(object sender, EventArgs e) {
             GeradorDeProducoes gerador = new GeradorDeProducoes();
-            string producao = gerador.gerarProducoesRegulares();
-            
+            int tamanho = Int32.Parse(textTamanhoMaximo.Text);
+            string producao = gerador.gerarProducoesRegulares(labelSentenca, (tamanho > 0) ? tamanho : 10 );
         }
 
         private void adicionaExpressao_Click(object sender, EventArgs e) {

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace TrabalhoFormaisParteUm {
-    static class AdicionarProducaoRegular {
+    static class AdicionarProducao {
 
-        public static bool adicionarProducao(string ladoEsquerdo, string ladoDireito) {
+        public static bool adicionarProducaoRegular(string ladoEsquerdo, string ladoDireito) {
 
 
-            ///Não to usando else if pq se uma verificação falhar o código para, então não tem pq usar...
 
             //Verifica se o usuário não está tentando adicionar uma produção vazia ou se o usuário não está tentando adicionar uma produção inválida
             if (String.IsNullOrWhiteSpace(ladoEsquerdo) || String.IsNullOrWhiteSpace(ladoDireito)) {
@@ -59,37 +58,51 @@ namespace TrabalhoFormaisParteUm {
                 prod.direitos.Add(ladoDireito);
             }
             
-            
-            //Gramatica.getProducoes().Add(new Producao(ladoEsquerdo, ladoDireito));
 
-            Console.WriteLine("Produções já adicionadas:");
-            foreach (Producao p in Gramatica.getProducoes())
-                for(int c = 0; c < p.direitos.Count; c++)
-                Console.WriteLine("Producao: " + p.esquerdo + " -> " + p.direitos[c]);
+            return true;
+        }
+
+
+        public static bool adicionarProducaoLC(string ladoEsquerdo, string ladoDireito) {
+            if (String.IsNullOrWhiteSpace(ladoEsquerdo) || String.IsNullOrWhiteSpace(ladoDireito)) {
+                MessageBox.Show("Produções não podem estar vazias.", "Verifique sua produção");
+                return false;
+            }
+            foreach (Producao p in Gramatica.getProducoes()) {
+
+                if (p.direitos[0] == ladoDireito && p.esquerdo == ladoEsquerdo) {
+                    MessageBox.Show("Produção já adicionada, tente novamente!", "Verifique sua produção.");
+                    return false;
+                }
+            }
+            if (!Gramatica.getNaoTerminais().Contains(ladoEsquerdo)) {
+                MessageBox.Show("Símbolo não terminal não está na gramática, tente com um símbolo adicionado previamente.", "Verifique seu símbolo");
+                return false;
+            }
+
+            
+
+            foreach(char c in ladoDireito) {
+                if(!Gramatica.getTerminais().Contains(c.ToString()) && !Gramatica.getNaoTerminais().Contains(c.ToString())) {
+                    MessageBox.Show("Símbolo " + c.ToString() + " não está na gramática, tente com um símbolo adicionado previamente.", "Verifique seus símbolo");
+                    return false;
+                }
+            }
+
+            Producao prod = Gramatica.getProducoes().Find(x => x.esquerdo == ladoEsquerdo);
+
+            if (prod == null) {
+                Gramatica.getProducoes().Add(new Producao(ladoEsquerdo, ladoDireito));
+            } else {
+                prod.direitos.Add(ladoDireito);
+            }
+
 
             return true;
 
 
+        } 
 
-
-            ///TODO: Remover isso talvez, uma vez que essa verificação já foi feita quando o símbolo não terminal foi adicionado na gramática
-            /*if (!Regex.Matches((ladoDireito[0].ToString(), @"[a-z0-9&]"){
-                MessageBox.Show("Lado esquerdo inválido, verifique sua produção.\nGramáticas regulares devem conter apenas .", "Verifique sua produção.");
-            }
-            */
-
-            /*
-            Dá pra remover isso eu acho também, mas sipa da pra usar na parte dos livres de contexto, então deixa aí sei lá
-            for (int c = 0;c < ladoDireito.Length; c++) {
-                if (!Gramatica.getNaoTerminais().Contains(ladoDireito[c].ToString())) {
-                    MessageBox.Show("Algum simbolo não terminal que você está tentando adicionar não está no conjunto de não terminais, tente novamente.",
-                        "Verifique seu´símbolo.");
-                    return;
-                }
-            }
-            */
-
-        }
 
 
     }

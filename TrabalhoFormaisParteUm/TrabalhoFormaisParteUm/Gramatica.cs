@@ -78,7 +78,6 @@ namespace TrabalhoFormaisParteUm {
             foreach (Producao p in producoes) {
                 if(p.esquerdo[0].ToString() == ladoEsquerdo) {
                     p.direitos.Add(ladoDireito);
-                    Console.WriteLine("Producao:" + p.esquerdo[0].ToString() + "\n" + p.direitos[0].ToString() + " " + p.direitos[1].ToString());
                     return;
                 }
             }
