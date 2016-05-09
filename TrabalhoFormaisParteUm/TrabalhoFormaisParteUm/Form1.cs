@@ -110,8 +110,22 @@ namespace TrabalhoFormaisParteUm {
             string producao = gerador.gerarProducoesRegulares(labelSentenca, (tamanho > 0) ? tamanho : 10 );
         }
 
-        private void adicionaExpressao_Click(object sender, EventArgs e) {
+        private void adicionaExpressao_Click(object sender, EventArgs e)
+        {
+            if (ExpressaoRegular.Validacoes(inputExpressoes.Text))
+            {
+                ExpressaoRegular.SetarExpressao(tableExpressoes, inputExpressoes.Text);
+            }
+        }
 
+        private void adicionarAutomato_Click(object sender, EventArgs e)
+        {
+            AutomatoFinito.AdicionarTransicao('A', 'B', 'a');
+            AutomatoFinito.AdicionarTransicao('B', 'A', 'b');
+            AutomatoFinito.AdicionarTransicao('B', 'C', 'c');
+            AutomatoFinito.AdicionarTransicao('A', 'A', 'c');
+
+            AutomatoFinito.adicionarGrid(automatoFinito);
         }
     }
 }
