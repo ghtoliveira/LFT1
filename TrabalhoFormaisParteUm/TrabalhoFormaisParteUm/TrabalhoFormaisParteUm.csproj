@@ -58,12 +58,11 @@
     </Compile>
     <Compile Include="GeradorDeProducoes.cs" />
     <Compile Include="Gramatica.cs" />
+    <Compile Include="GramaticaLC.cs" />
     <Compile Include="InicializadorUI.cs" />
     <Compile Include="Producao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sentenca.cs" />
-    <Compile Include="Simbolo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

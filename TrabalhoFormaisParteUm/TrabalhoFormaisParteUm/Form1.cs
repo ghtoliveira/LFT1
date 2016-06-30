@@ -14,6 +14,7 @@ namespace TrabalhoFormaisParteUm {
 
         public Form1() {
             InitializeComponent();
+            radioRegular.Checked = true;
             
         }
 
@@ -83,9 +84,11 @@ namespace TrabalhoFormaisParteUm {
                 if (AdicionarProducao.adicionarProducaoRegular(comboLadoEsquerdo.Text, txtLadoDireito.Text)) {
                     InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
                     InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
+                    panelConjuntoProducoes.Enabled = true;
                 }
             } else if (radioLivreDeContexto.Checked) {
                 if (AdicionarProducao.adicionarProducaoLC(comboLadoEsquerdo.Text, txtLadoDireito.Text)) {
+                    panelConjuntoProducoes.Enabled = true;
                     InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
                     InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
                 }
@@ -106,7 +109,7 @@ namespace TrabalhoFormaisParteUm {
 
         private void btnGerarSentencas_Click(object sender, EventArgs e) {
             GeradorDeProducoes gerador = new GeradorDeProducoes();
-            int tamanho = Int32.Parse(textTamanhoMaximo.Text);
+            int tamanho = Int32.Parse(txtTamanhoMaximo.Text);
             string producao = gerador.gerarProducoesRegulares(labelSentenca, (tamanho > 0) ? tamanho : 10 );
         }
 
@@ -126,6 +129,16 @@ namespace TrabalhoFormaisParteUm {
             AutomatoFinito.AdicionarTransicao('A', 'A', 'c');
 
             AutomatoFinito.adicionarGrid(automatoFinito);
+        }
+
+        private void btnGerarSentencas_Click_1(object sender, EventArgs e) {
+            GeradorDeProducoes gp = new GeradorDeProducoes();
+            int tamanho = String.IsNullOrEmpty(txtTamanhoMaximo.Text) ? 10 : Int32.Parse(txtTamanhoMaximo.Text);
+            gp.gerarProducoesRegulares(labelSentenca, tamanho);
+        }
+
+        private void btnVerificarGLC_Click(object sender, EventArgs e) {
+            GramaticaLC.verificarGlc();
         }
     }
 }
