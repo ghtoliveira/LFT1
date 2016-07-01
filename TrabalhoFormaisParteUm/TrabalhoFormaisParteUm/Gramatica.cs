@@ -70,7 +70,23 @@ namespace TrabalhoFormaisParteUm {
             return producoes;
         }
 
-      
+        //METODO PARA REMOVER PRODUÇÕES
+        public static void removerProducao(Producao producaoParaRemover)
+        {
+            producoes.Remove(producaoParaRemover);
+        }
+
+        //Metodo para remover lados direitos
+        public static void removerLadoDireito(Producao ladoEsquerdo, List<string> ladoDireito)
+        {
+            //producoes.Find(ladoEsquerdo).direitos.Remove(ladoDireito);
+            int a=producoes.IndexOf(ladoEsquerdo);
+            for (int i = 0; i < ladoDireito.Count; i++)
+            {
+                producoes[producoes.IndexOf(ladoEsquerdo)].direitos.Remove(ladoDireito[i]);
+            }
+            
+        }
 
         public static void adicionarProducao(string ladoEsquerdo, string ladoDireito) {
             //Variável usada pra verificar se uma produção com o mesmo NT já existe

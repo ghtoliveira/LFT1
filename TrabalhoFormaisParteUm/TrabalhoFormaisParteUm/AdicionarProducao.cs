@@ -83,10 +83,19 @@ namespace TrabalhoFormaisParteUm {
             
 
             foreach(char c in ladoDireito) {
-                if(!Gramatica.getTerminais().Contains(c.ToString()) && !Gramatica.getNaoTerminais().Contains(c.ToString())) {
-                    MessageBox.Show("Símbolo " + c.ToString() + " não está na gramática, tente com um símbolo adicionado previamente.", "Verifique seus símbolo");
-                    return false;
+                if (!c.ToString().Contains("&")) // Afim de realizar a remoção de palavra vazia será permitido que adicione palavra vazia
+                {
+                    if (!Gramatica.getTerminais().Contains(c.ToString()) && !Gramatica.getNaoTerminais().Contains(c.ToString()))
+                    {
+                        MessageBox.Show("Símbolo " + c.ToString() + " não está na gramática, tente com um símbolo adicionado previamente.", "Verifique seus símbolo");
+                        return false;
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Simbolo Vazio adicionado");
+                }
+                
             }
 
             Producao prod = Gramatica.getProducoes().Find(x => x.esquerdo == ladoEsquerdo);

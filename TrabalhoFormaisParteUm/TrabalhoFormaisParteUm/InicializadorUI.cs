@@ -26,5 +26,19 @@ namespace TrabalhoFormaisParteUm {
             grid.Rows.Add(row);
         }
 
+        public static void resetarGrid(DataGridView grid)
+        {
+            /*
+            for (int i = 0; i < grid.Rows.Count-1; i++)
+            {
+                grid.Rows.Remove(grid.Rows[i]);
+            }
+            */
+
+            grid.DataSource = null;
+            grid.Rows.Clear();
+            
+        }
+
     }
 }

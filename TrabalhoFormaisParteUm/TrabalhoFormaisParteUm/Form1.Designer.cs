@@ -26,6 +26,7 @@
             this.radioRegular = new System.Windows.Forms.RadioButton();
             this.radioLivreDeContexto = new System.Windows.Forms.RadioButton();
             this.panelTipoGramatica = new System.Windows.Forms.Panel();
+            this.radioGramaticaLivre = new System.Windows.Forms.RadioButton();
             this.btnAdicionarSimbolos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,8 +63,9 @@
             this.txtTamanhoMaximo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panelConjuntoProducoes = new System.Windows.Forms.Panel();
-            this.radioGramaticaLivre = new System.Windows.Forms.RadioButton();
             this.btnVerificarGLC = new System.Windows.Forms.Button();
+            this.btnRemSimInuteis = new System.Windows.Forms.Button();
+            this.btnRemProVazias = new System.Windows.Forms.Button();
             this.panelTipoGramatica.SuspendLayout();
             this.panelSimbolos.SuspendLayout();
             this.panelProducoes.SuspendLayout();
@@ -106,6 +108,17 @@
             this.panelTipoGramatica.Name = "panelTipoGramatica";
             this.panelTipoGramatica.Size = new System.Drawing.Size(161, 100);
             this.panelTipoGramatica.TabIndex = 3;
+            // 
+            // radioGramaticaLivre
+            // 
+            this.radioGramaticaLivre.AutoSize = true;
+            this.radioGramaticaLivre.Location = new System.Drawing.Point(3, 49);
+            this.radioGramaticaLivre.Name = "radioGramaticaLivre";
+            this.radioGramaticaLivre.Size = new System.Drawing.Size(114, 17);
+            this.radioGramaticaLivre.TabIndex = 3;
+            this.radioGramaticaLivre.TabStop = true;
+            this.radioGramaticaLivre.Text = "Gramatica Livre(t2)";
+            this.radioGramaticaLivre.UseVisualStyleBackColor = true;
             // 
             // btnAdicionarSimbolos
             // 
@@ -432,6 +445,8 @@
             // 
             // panelConjuntoProducoes
             // 
+            this.panelConjuntoProducoes.Controls.Add(this.btnRemProVazias);
+            this.panelConjuntoProducoes.Controls.Add(this.btnRemSimInuteis);
             this.panelConjuntoProducoes.Controls.Add(this.btnVerificarGLC);
             this.panelConjuntoProducoes.Controls.Add(this.label13);
             this.panelConjuntoProducoes.Controls.Add(this.tableProducoes);
@@ -441,21 +456,10 @@
             this.panelConjuntoProducoes.Controls.Add(this.label11);
             this.panelConjuntoProducoes.Controls.Add(this.labelSentenca);
             this.panelConjuntoProducoes.Enabled = false;
-            this.panelConjuntoProducoes.Location = new System.Drawing.Point(304, 38);
+            this.panelConjuntoProducoes.Location = new System.Drawing.Point(304, 15);
             this.panelConjuntoProducoes.Name = "panelConjuntoProducoes";
-            this.panelConjuntoProducoes.Size = new System.Drawing.Size(268, 355);
+            this.panelConjuntoProducoes.Size = new System.Drawing.Size(268, 543);
             this.panelConjuntoProducoes.TabIndex = 23;
-            // 
-            // radioGramaticaLivre
-            // 
-            this.radioGramaticaLivre.AutoSize = true;
-            this.radioGramaticaLivre.Location = new System.Drawing.Point(3, 49);
-            this.radioGramaticaLivre.Name = "radioGramaticaLivre";
-            this.radioGramaticaLivre.Size = new System.Drawing.Size(114, 17);
-            this.radioGramaticaLivre.TabIndex = 3;
-            this.radioGramaticaLivre.TabStop = true;
-            this.radioGramaticaLivre.Text = "Gramatica Livre(t2)";
-            this.radioGramaticaLivre.UseVisualStyleBackColor = true;
             // 
             // btnVerificarGLC
             // 
@@ -466,6 +470,26 @@
             this.btnVerificarGLC.Text = "Verificar GLC";
             this.btnVerificarGLC.UseVisualStyleBackColor = true;
             this.btnVerificarGLC.Click += new System.EventHandler(this.btnVerificarGLC_Click);
+            // 
+            // btnRemSimInuteis
+            // 
+            this.btnRemSimInuteis.Location = new System.Drawing.Point(18, 356);
+            this.btnRemSimInuteis.Name = "btnRemSimInuteis";
+            this.btnRemSimInuteis.Size = new System.Drawing.Size(238, 23);
+            this.btnRemSimInuteis.TabIndex = 36;
+            this.btnRemSimInuteis.Text = "Remover Símbolos Inúteis";
+            this.btnRemSimInuteis.UseVisualStyleBackColor = true;
+            this.btnRemSimInuteis.Click += new System.EventHandler(this.btnRemSimInuteis_Click);
+            // 
+            // btnRemProVazias
+            // 
+            this.btnRemProVazias.Location = new System.Drawing.Point(18, 385);
+            this.btnRemProVazias.Name = "btnRemProVazias";
+            this.btnRemProVazias.Size = new System.Drawing.Size(238, 23);
+            this.btnRemProVazias.TabIndex = 37;
+            this.btnRemProVazias.Text = "Remover Produções Vazias";
+            this.btnRemProVazias.UseVisualStyleBackColor = true;
+            this.btnRemProVazias.Click += new System.EventHandler(this.btnRemProVazias_Click);
             // 
             // Form1
             // 
@@ -546,6 +570,8 @@
         private System.Windows.Forms.Panel panelConjuntoProducoes;
         private System.Windows.Forms.RadioButton radioGramaticaLivre;
         private System.Windows.Forms.Button btnVerificarGLC;
+        private System.Windows.Forms.Button btnRemSimInuteis;
+        private System.Windows.Forms.Button btnRemProVazias;
     }
 }
 

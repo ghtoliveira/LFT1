@@ -92,6 +92,14 @@ namespace TrabalhoFormaisParteUm {
                     InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
                     InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
                 }
+
+            }else if(radioGramaticaLivre.Checked){ //PARTE 2
+                if (AdicionarProducao.adicionarProducaoLC(comboLadoEsquerdo.Text, txtLadoDireito.Text))
+                {
+                    panelConjuntoProducoes.Enabled = true;
+                    InicializadorUI.adicionarHeadersGrid(tableProducoes, new string[] { "Lado Esquerdo", "Lado Direito" });
+                    InicializadorUI.adicionarItemsGrid(tableProducoes, new string[] { comboLadoEsquerdo.Text, txtLadoDireito.Text });
+                }
             }
 
 
@@ -139,6 +147,17 @@ namespace TrabalhoFormaisParteUm {
 
         private void btnVerificarGLC_Click(object sender, EventArgs e) {
             GramaticaLC.verificarGlc();
+        }
+
+        private void btnRemSimInuteis_Click(object sender, EventArgs e)
+        {
+            //Remoção de Simbolos Inúteis
+            RemoverSimbolosInuteis.Remover(tableProducoes, tableExpressoes);
+        }
+
+        private void btnRemProVazias_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
